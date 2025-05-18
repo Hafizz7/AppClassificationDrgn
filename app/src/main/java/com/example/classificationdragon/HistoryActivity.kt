@@ -49,7 +49,7 @@ class HistoryActivity : AppCompatActivity() {
         }
     }
     private fun deleteHistory(history: HistoryEntity) {
-        // Menghapus data dari database di dalam coroutine
+        // Menghapus data dari database di dalam coroutine 34
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val db = HistoriDatabase.getDatabase(this@HistoryActivity)
