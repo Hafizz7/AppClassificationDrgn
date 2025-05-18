@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PitayaSteamVision</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="pilih_metode">Pilih metode Klasifikasi yang Anda inginkan</string>
+    <string name="ambil_gambar">Ambil Gambar</string>
+    <string name="gambar_galeri">Gambar Galeri</string>
+    <string name="riwayat_klas">Riwayat Klasifikasi</string>
+    <string name="p1">Antraknosa</string>
+    <string name="p2">Bercak Merah</string>
+    <string name="p3">Busuk Batang</string>
+    <string name="p4">Kudis</string>
+    <string name="p5">Mosaik</string>
+
+
+
+</resources>

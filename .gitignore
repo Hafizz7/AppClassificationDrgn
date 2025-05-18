@@ -1,0 +1,27 @@
+# File konfigurasi Android Studio
+*.iml
+.idea/
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Gradle
+.gradle/
+build/
+app/build/
+externalNativeBuild/
+.cxx/
+
+# File lokal & pribadi
+local.properties
+apikey.properties
+*.keystore
+*.jks
+
+# Sistem
+.DS_Store
+captures/
+app/src/main/assets

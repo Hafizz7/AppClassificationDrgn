@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    android:layout_margin="16dp"
+    android:background="#E6FFE6"> <!-- Warna hijau muda -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Judul Penyakit -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Busuk Batang"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#004D40"/>
+
+        <!-- Gejala -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gejala"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/symptomsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- Batang berubah kuning\n- Mengalami kekeringan dan kekurangan air\n- Batang yang terinfeksi mengering dan mati"
+            android:textSize="14sp"/>
+
+        <!-- Penyebab -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Penyebab"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/causeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- Infeksi jamur Neoscytalidium dimidiatum"
+            android:textSize="14sp"/>
+
+        <!-- Cara Penanganan -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cara Penanganan"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/treatmentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- Pangkas batang yang terserang\n- Bersihkan kebun secara rutin\n- Perbaiki drainase"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
