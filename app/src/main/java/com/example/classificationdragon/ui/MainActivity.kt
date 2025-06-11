@@ -1,4 +1,4 @@
-package com.example.classificationdragon.ui
+package com.example.classificationdragon.viewmodel
 
 import android.app.Activity
 import android.content.Intent
@@ -23,6 +23,9 @@ import com.example.classificationdragon.Klasifikasi
 import com.example.classificationdragon.R
 import com.example.classificationdragon.databinding.ActivityMainBinding
 import com.example.classificationdragon.data.db.HistoriDatabase
+import com.example.classificationdragon.viewmodel.HasilDeteksi
+import com.example.classificationdragon.ui.HistoryActivity
+import com.example.classificationdragon.ui.PreviewActivity
 //import com.example.classificationdragon.models.BeritaTerbaru
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
