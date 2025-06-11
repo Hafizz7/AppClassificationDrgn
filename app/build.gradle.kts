@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.classificationdragon"
-    compileSdk = 33
+    compileSdk = 34
     buildFeatures {
         viewBinding = true
     }

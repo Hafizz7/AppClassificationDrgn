@@ -1,9 +1,8 @@
-// Refactored MainActivity with MVVM (without changing folder structure)
-package com.example.classificationdragon.ui
+
+package com.example.classificationdragon
 
 import android.Manifest
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -21,10 +20,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.classificationdragon.R
+
 import com.example.classificationdragon.databinding.ActivityMainBinding
+import com.example.classificationdragon.ui.HasilDeteksi
+import com.example.classificationdragon.ui.HistoryActivity
+import com.example.classificationdragon.ui.PreviewActivity
 import com.example.classificationdragon.viewmodel.ClassificationViewModel
+import com.example.classificationdragon.viewmodel.ClassificationViewModelFactory
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -33,15 +37,18 @@ import java.io.OutputStream
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val classificationViewModel: ClassificationViewModel by viewModels()
+    private lateinit var classificationViewModel: ClassificationViewModel
+
 
     private val REQUEST_IMAGE_CAPTURE = 1
-    private lateinit var selectButton: LinearLayout
-    private lateinit var buttonCamera: LinearLayout
-    private lateinit var buttonHistory: LinearLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        classificationViewModel = ViewModelProvider(
+            this,
+            ClassificationViewModelFactory(applicationContext)
+        ).get(ClassificationViewModel::class.java)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
