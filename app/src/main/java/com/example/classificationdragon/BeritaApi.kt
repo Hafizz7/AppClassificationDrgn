@@ -1,6 +1,6 @@
 package com.example.classificationdragon
 
-import com.example.classificationdragon.models.BeritaTerbaru
+import com.example.classificationdragon.data.models.BeritaTerbaru
 
 import retrofit2.Call
 import retrofit2.http.GET

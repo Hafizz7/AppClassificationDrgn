@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassificationDragon"
+
         tools:targetApi="31" >
 
         <!-- <meta-data -->
@@ -34,7 +35,7 @@
         </provider>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,9 +43,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HistoryActivity" />
-        <activity android:name=".HasilDeteksi" />
-        <activity android:name=".PreviewActivity" />
+        <activity android:name=".ui.HistoryActivity" />
+        <activity android:name=".ui.HasilDeteksi" />
+        <activity android:name=".ui.PreviewActivity" />
     </application>
 
 </manifest>

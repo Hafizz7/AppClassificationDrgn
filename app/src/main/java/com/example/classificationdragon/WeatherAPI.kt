@@ -1,6 +1,6 @@
 package com.example.classificationdragon
 
-import com.example.classificationdragon.models.WeatherResponse
+import com.example.classificationdragon.data.models.WeatherResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

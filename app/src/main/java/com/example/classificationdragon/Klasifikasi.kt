@@ -1,15 +1,14 @@
 package com.example.classificationdragon
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.util.Log
-import com.example.classificationdragon.models.HistoryEntity
+import com.example.classificationdragon.data.models.HistoryEntity
+import com.example.classificationdragon.data.db.HistoriDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.tensorflow.lite.Interpreter
-import java.io.ByteArrayOutputStream
 import java.io.FileInputStream
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
@@ -23,6 +22,13 @@ class Klasifikasi(private val context: Context) {
     private val interpreter: Interpreter by lazy { Interpreter(loadModelFile()) }
 //    private val labels = listOf("Antraknosa", "Bercak Merah", "Busuk Batang", "Kudis", "Mosaik")
 private val labels = listOf("Antraknosa", "Busuk Batang", "Kudis", "Mosaik")
+    private val classThresholds = mapOf(
+        "Antraknosa" to 70.0f,
+        "Busuk Batang" to 70.0f,
+        "Kudis" to 60.0f,
+        "Mosaik" to 85.0f
+    )
+
 
     interface ClassificationCallback {
         fun onResult(resultText: String, predictedDisease: String)
@@ -57,13 +63,16 @@ private val labels = listOf("Antraknosa", "Busuk Batang", "Kudis", "Mosaik")
 
             val maxIndex = result[0].indices.maxByOrNull { result[0][it] } ?: -1
             val confidence = result[0][maxIndex] * 100
-            val threshold = 70.0f // batas kepercayaan minimal
 
-            val predictedDisease = if (confidence < threshold) {
+            val labelAtMax = labels[maxIndex]
+            val thresholdForClass = classThresholds[labelAtMax] ?: 70.0f
+
+            val predictedDisease = if (confidence < thresholdForClass) {
                 "Tidak Diketahui"
             } else {
-                labels[maxIndex]
+                labelAtMax
             }
+
 
             val resultText = buildString {
                 append("Hasil: $predictedDisease (${confidence.toInt()}%)\n\n")
