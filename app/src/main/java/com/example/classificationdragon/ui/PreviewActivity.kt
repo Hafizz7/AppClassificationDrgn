@@ -8,7 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.classificationdragon.Klasifikasi
+import com.example.classificationdragon.data.models.Klasifikasi
 import com.example.classificationdragon.R
 import java.io.ByteArrayOutputStream
 import java.io.File

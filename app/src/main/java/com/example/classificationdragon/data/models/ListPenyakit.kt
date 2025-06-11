@@ -1,8 +1,10 @@
-package com.example.classificationdragon
+package com.example.classificationdragon.data.models
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.classificationdragon.R
+
 class ListPenyakit: AppCompatActivity() {
     private lateinit var titleText: TextView
     private lateinit var symptomsText: TextView
